@@ -64,6 +64,11 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
 }
+.btn--svg-only {
+  background-color: transparent;
+  padding: 0;
+  z-index: 1;
+}
 .btn--demo {
   color: #212353;
   box-shadow: 0 5px 5px rgba(75, 93, 104, 0.1);
@@ -266,7 +271,7 @@ h1, h2, h3 {
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(to right, transparent 75%, #9C69E2);
+  background: linear-gradient(90deg, #9C69E2, transparent 8%, transparent 75%, #9C69E2);
 }
 
 .carousel__cards {
@@ -295,7 +300,9 @@ h1, h2, h3 {
 }
 .carousel__left-arrow {
   padding-right: 1.25rem;
-  z-index: 1;
+}
+.carousel__right-arrow {
+  opacity: 0.5;
 }
 
 .card {

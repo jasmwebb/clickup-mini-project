@@ -5,7 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DataWarehouse | About</title>
+
   <link rel="stylesheet" href="./public/css/main.css">
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -202,30 +204,34 @@
             <svg class="carousel__indicator carousel__indicator--active" width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="2.5" cy="2.5" r="2.5" />
             </svg>
-  
+          
             <svg class="carousel__indicator" width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="2.5" cy="2.5" r="2.5" />
             </svg>
-  
+          
             <svg class="carousel__indicator" width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="2.5" cy="2.5" r="2.5" />
             </svg>
-  
+          
             <svg class="carousel__indicator" width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="2.5" cy="2.5" r="2.5" />
             </svg>
           </div>
 
           <div class="carousel__arrows">
-            <svg class="carousel__left-arrow" width="42" height="16" viewBox="0 0 42 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 1L1 8L7 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M0.999998 8L41 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <button id="carousel__previous" class="btn btn--svg-only">
+              <svg class="carousel__left-arrow" width="42" height="16" viewBox="0 0 42 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 1L1 8L7 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M0.999998 8L41 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
             
-            <svg class="carousel__right-arrow" width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 15L21 8L15 1" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M21 8H1" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>                           
+            <button id="carousel__next" class="btn btn--svg-only">
+              <svg class="carousel__right-arrow" width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 15L21 8L15 1" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 8H1" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>                  
           </div>
         </div>
       </div>
@@ -338,5 +344,68 @@
       </section>
     </div>
   </footer>
+
+  <script>
+    // -------------------------------------
+    // -- Testimonial carousel functionality
+    // -------------------------------------
+
+    const previous = document.getElementById("carousel__previous");
+    const next = document.getElementById("carousel__next");
+    const carousel = document.getElementsByClassName("carousel__cards")[0];
+    const indicators = document.getElementsByClassName("carousel__indicator");
+    console.log(indicators);
+
+    // Calculate the carousel's position when the last card is in focus
+    // We'll use this to determine when we reach the end of the testimonials
+    const cardWidth = 668.8;
+    const numCards = document.getElementsByClassName("card").length;
+    const maxPosition = -(cardWidth * (numCards - 1));  // Subtract 1 to account for current card
+
+    let position = 0;
+
+    function setIndicator() {
+      [...indicators].forEach(el => el.classList.remove("carousel__indicator--active"));
+
+      switch (Math.abs(position)) {
+        case 0:
+          indicators[0].classList.add("carousel__indicator--active");
+          break;
+        case cardWidth:
+          indicators[1].classList.add("carousel__indicator--active");
+          break;
+        case cardWidth * 2:
+          indicators[2].classList.add("carousel__indicator--active");
+          break;
+        case cardWidth * 3:
+          indicators[3].classList.add("carousel__indicator--active");
+          break;
+      }
+    }
+
+    previous.addEventListener("click", () => {
+      if (position < 0) {
+        position += cardWidth;
+      } else {
+        // Loop around to the end
+        position = maxPosition;
+      }
+      
+      carousel.style.transform = `translateX(${position}px)`;
+      setIndicator();
+    });
+    
+    next.addEventListener("click", () => {
+      if (position > maxPosition) {
+        position -= cardWidth;
+      } else {
+        // Loop around to the beginning
+        position = 0;
+      }
+      
+      carousel.style.transform = `translateX(${position}px)`;
+      setIndicator();
+    });
+  </script>
 </body>
 </html>
