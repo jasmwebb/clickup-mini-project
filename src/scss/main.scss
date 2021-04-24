@@ -85,6 +85,11 @@ h1, h2, h3 {
     background-color: $accent-1;
     color: $bg-2;
   }
+
+  &--pink {
+    background-color: $accent-2;
+    color: $bg-2;
+  }
 }
 
 .hero {
@@ -216,5 +221,84 @@ h1, h2, h3 {
     &::after {
       @include feature-img("../../assets/feature--4.svg", 7rem);
     }
+  }
+}
+
+.footer {
+  border-top: 1px solid $accent-1;
+  padding-top: 6rem;
+  color: $text-dark;
+  
+  &__cta, &__info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 6rem;
+  }
+
+  &__company {
+    margin-right: 7rem;
+  }
+
+  &__branding {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__info, &__heading {
+    font-size: 1rem;
+  }
+
+  &__address {
+    font-style: normal;
+    font-weight: 400;
+
+    &--street {
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: $text-dark;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 2.5rem;
+  }
+
+  &__links {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &__link {
+    padding-left: 0;
+    margin-bottom: 1.15rem;
+
+    &-a {
+      text-decoration: none;
+      color: $text-dark;
+      padding-right: 0.5rem;
+    }
+  }
+}
+
+.cta {
+  &__title {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
   }
 }
