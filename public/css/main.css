@@ -101,9 +101,14 @@ h1, h2, h3 {
   display: flex;
   border-radius: 50px;
   padding: 1.25rem;
+  margin-bottom: 9rem;
 }
 .blurb--pink {
   background-color: rgba(240, 99, 184, 0.15);
+}
+.blurb--purple {
+  background-color: #9C69E2;
+  margin-top: 9rem;
 }
 .blurb__text {
   padding: 5rem 5rem 0 3.5rem;
@@ -115,7 +120,6 @@ h1, h2, h3 {
 
 .features__intro {
   text-align: center;
-  margin-top: 9rem;
   margin-bottom: 6.25rem;
 }
 .features__title {
@@ -153,6 +157,7 @@ h1, h2, h3 {
 .feature__btn {
   padding: 0;
   background-color: transparent;
+  color: #212353;
 }
 .feature--green::before {
   content: "";
@@ -241,6 +246,87 @@ h1, h2, h3 {
   position: absolute;
   top: 7rem;
   transform: translateX(-115%);
+}
+
+.testimonials {
+  display: block;
+  position: relative;
+  padding: 6.25rem 5.5rem 3.75rem;
+  overflow-x: hidden;
+}
+.testimonials__title {
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  margin-bottom: 5.25rem;
+}
+.testimonials::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, transparent 75%, #9C69E2);
+}
+
+.carousel__cards {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+}
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+.carousel__indicators, .carousel__arrows {
+  display: flex;
+  place-items: center;
+}
+.carousel__indicator {
+  padding-right: 0.625rem;
+  fill: #FFFFFF;
+}
+.carousel__indicator--active {
+  fill: #F063B8;
+  width: 10px;
+  height: 10px;
+}
+.carousel__left-arrow {
+  padding-right: 1.25rem;
+  z-index: 1;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1.875rem;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 3.75rem 4.375rem 3.125rem;
+  box-shadow: 0 1.15rem 0 0 rgba(0, 0, 0, 0.125);
+}
+.card__img {
+  border-radius: 50%;
+  height: 90px;
+  width: 100%;
+  object-fit: cover;
+}
+.card__title {
+  font-family: "Nunito", sans-serif;
+  font-size: 1em;
+  margin-bottom: 0;
+}
+.card__subtitle {
+  font-size: 0.875rem;
+  margin-top: 0;
+  color: #9C69E2;
+}
+.card__text {
+  font-weight: 400;
+  width: 36ch;
 }
 
 .footer {

@@ -148,29 +148,86 @@
     </section>
 
     <section class="blurb blurb--purple testimonials">
-      <h2 class="testimonals__title">Testimonals</h2>
-      <div class="testimonials__carousel">
-        <article class="card">
-          <img src="./assets/john-fang.jpg" alt="Photo of John Fang">
-          <div class="card__content">
-            <h3 class="card__title">John Fang</h3>
-            <p class="card__subtitle">wordfaang.com</p>
-            <p class="card__text">
-              Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
-            </p>
+      <h2 class="testimonials__title">Testimonals</h2>
+
+      <div class="testimonials__carousel carousel">
+        <div class="carousel__cards">
+          <article class="card">
+            <img class="card__img" src="./assets/john-fang.jpg" alt="Photo of John Fang">
+            <div class="card__content">
+              <h3 class="card__title">John Fang</h3>
+              <p class="card__subtitle">wordfaang.com</p>
+              <p class="card__text">
+                Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+              </p>
+            </div>
+          </article>
+          
+          <article class="card">
+            <img class="card__img" src="./assets/jeny-doe.jpg" alt="Photo of Jeny Doe">
+            <div class="card__content">
+              <h3 class="card__title">Jeny Doe</h3>
+              <p class="card__subtitle">UX Engineer</p>
+              <p class="card__text">
+                Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card__img" src="./assets/john-fang.jpg" alt="Photo of John Fang">
+            <div class="card__content">
+              <h3 class="card__title">John Fang</h3>
+              <p class="card__subtitle">wordfaang.com</p>
+              <p class="card__text">
+                Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+              </p>
+            </div>
+          </article>
+          
+          <article class="card">
+            <img class="card__img" src="./assets/jeny-doe.jpg" alt="Photo of Jeny Doe">
+            <div class="card__content">
+              <h3 class="card__title">Jeny Doe</h3>
+              <p class="card__subtitle">UX Engineer</p>
+              <p class="card__text">
+                Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="carousel__controls">
+          <div class="carousel__indicators">
+            <svg class="carousel__indicator carousel__indicator--active" width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="2.5" cy="2.5" r="2.5" />
+            </svg>
+  
+            <svg class="carousel__indicator" width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="2.5" cy="2.5" r="2.5" />
+            </svg>
+  
+            <svg class="carousel__indicator" width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="2.5" cy="2.5" r="2.5" />
+            </svg>
+  
+            <svg class="carousel__indicator" width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="2.5" cy="2.5" r="2.5" />
+            </svg>
           </div>
-        </article>
-        
-        <article class="card">
-          <img src="./assets/jeny-doe.jpg" alt="Photo of Jeny Doe">
-          <div class="card__content">
-            <h3 class="card__title">Jeny Doe</h3>
-            <p class="card__subtitle">UX Engineer</p>
-            <p class="card__text">
-              Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
-            </p>
+
+          <div class="carousel__arrows">
+            <svg class="carousel__left-arrow" width="42" height="16" viewBox="0 0 42 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1L1 8L7 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M0.999998 8L41 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            
+            <svg class="carousel__right-arrow" width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 15L21 8L15 1" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 8H1" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>                           
           </div>
-        </article>
+        </div>
       </div>
     </section>
   </main>
@@ -209,7 +266,7 @@
             Warehouse Society, 234<br>
             Bahagia Ave Street PRBW 29281
           </address>
-          
+
           <address class="footer__address">
             <a href="mailto:info@warehouse.project" class="footer__email" >info@warehouse.project</a><br>
             <a href="tel:+12323434" class="footer__phone">1-232-3434 (Main)</a>
