@@ -1,0 +1,25 @@
+@mixin feature-bg($bg-color, $pos1-y: top -100%, $pos1-x: right -100%, $pos2-y: 0, $pos2-x: 0) {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba($bg-color, 0.1);
+  background-image: url("../../assets/feature__bg--lg.svg"),
+    url("../../assets/feature__bg--sm.svg");
+  background-position: $pos1-y $pos1-x,
+    $pos2-y $pos2-x;
+  background-repeat: no-repeat;
+  z-index: -1;
+  clip-path: path("M44.2904 41.7355C48.3276 17.6466 69.1778 0.00012207 93.6026 0.00012207H383.285C410.899 0.00012207 433.285 22.3859 433.285 50.0001V308C433.285 335.614 410.899 358 383.285 358H50.3624C19.4471 358 -4.05989 330.226 1.05018 299.736L44.2904 41.7355Z");
+}
+
+@mixin feature-img($bg-url, $top-val) {
+  content: url($bg-url);
+  position: absolute;
+  top: $top-val;
+  transform: translateX(-115%);
+}

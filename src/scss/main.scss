@@ -1,9 +1,13 @@
 @use "colors" as *;
+@use "mixins" as *;
 
 body {
   background: linear-gradient($bg-1, $bg-2);
   color: $text;
   font-family: "Nunito", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.75;
   margin: 0;
   padding-top: 3.25rem;
   overflow-x: hidden;
@@ -32,11 +36,21 @@ h1, h2, h3 {
     display: inherit;
     list-style: none;
     padding-left: 5rem;
-    font-weight: 600;
   }
 
   &__item {
     padding-left: 2.5rem;
+
+    &-a {
+      color: $text;
+      text-decoration: none;
+
+      &:hover, &--current {
+        color: $text-dark;
+        font-weight: 800;
+      }
+    }
+
   }
 }
 
@@ -48,28 +62,33 @@ h1, h2, h3 {
   font-family: inherit;
   font-weight: 800;
   font-size: 1rem;
+
+  &:hover {
+    cursor: pointer;
+  }
   
   &__arrow {
     padding-left: 1rem;
   }
   
-  &-arrowed {
+  &--arrowed {
     display: flex;
     align-items: center;
   }
   
-  &-demo {
+  &--demo {
     color: $text-dark;
     box-shadow: 0 5px 5px $shadow;
   }
 
-  &-purple {
+  &--purple {
     background-color: $accent-1;
     color: $bg-2;
   }
 }
 
 .hero {
+  position: relative;
   margin-top: 8rem;
   margin-bottom: 12rem;
 
@@ -80,15 +99,14 @@ h1, h2, h3 {
   }
 
   &__content {
-    font-size: 1.125rem;
-    width: 34ch;
-    line-height: 1.75;
+    width: 35ch;
     margin-bottom: 3rem;
   }
 
-  &__img {
+  &::before {
+    content: url("../../assets/hero.svg");
     position: absolute;
-    transform: translateY(-65%) translateX(25%);
+    transform: translate(43%, 20%);
   }
 }
 
@@ -97,7 +115,7 @@ h1, h2, h3 {
   border-radius: 50px;
   padding: 1.25rem;
 
-  &-pink {
+  &--pink {
     background-color: rgba($accent-2, .15);
   }
   
@@ -109,9 +127,94 @@ h1, h2, h3 {
     font-size: 2.5rem;
     line-height: 1.35;
   }
+}
 
-  &__content {
-    font-size: 1.125rem;
-    line-height: 1.75;
+.features {
+  &__intro {
+    text-align: center;
+    margin-top: 9rem;
+    margin-bottom: 6.25rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+  }
+
+  &__description {
+    max-width: 60ch;
+    margin: auto;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 8rem;
+    justify-items: center;
+  }
+}
+
+.feature {
+  position: relative;
+  border-radius: 50px;
+  padding: 3rem 3rem 2.5rem 10rem;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__name {
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 1rem;
+    max-width: 27ch;
+  }
+
+  &__btn {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  &--green {
+    &::before {
+      @include feature-bg($accent-3, top -20%, right 15%, top 17%, right 32%);
+    }
+
+    &::after {
+      @include feature-img("../../assets/feature--1.svg", 6rem);
+    }
+  }
+  
+  &--purple {
+    &::before {
+      @include feature-bg($accent-1, bottom -30%, right 20%);
+    }
+
+    &::after {
+      @include feature-img("../../assets/feature--2.svg", 5rem);
+    }
+  }
+  
+  &--pink {
+    &::before {
+      @include feature-bg($accent-2, $pos2-y: top 10%, $pos2-x: right 15%);
+    }
+
+    &::after {
+      @include feature-img("../../assets/feature--3.svg", 8rem);
+    }
+  }
+  
+  &--blue {
+    &::before {
+      @include feature-bg($accent-4, top -20%, left 15%, bottom 5%, right 15%);
+    };
+
+    &::after {
+      @include feature-img("../../assets/feature--4.svg", 7rem);
+    }
   }
 }
