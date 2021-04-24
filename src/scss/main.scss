@@ -1,4 +1,117 @@
+@use "colors" as *;
+
 body {
-  background-color: slategrey;
-  color: whitesmoke;
+  background: linear-gradient($bg-1, $bg-2);
+  color: $text;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding-top: 3.25rem;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: "Open Sans", sans-serif;
+  color: $text-dark;
+}
+
+.container {
+  max-width: 1118px;
+  margin: auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  
+  &__left {
+    display: inherit;
+    align-items: center;
+  }
+
+  &__links {
+    display: inherit;
+    list-style: none;
+    padding-left: 5rem;
+    font-weight: 600;
+  }
+
+  &__item {
+    padding-left: 2.5rem;
+  }
+}
+
+.btn {
+  background-color: $bg-2;
+  border-radius: 100vw;
+  border: none;
+  padding: 1.15rem 2rem;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 1rem;
+  
+  &__arrow {
+    padding-left: 1rem;
+  }
+  
+  &-arrowed {
+    display: flex;
+    align-items: center;
+  }
+  
+  &-demo {
+    color: $text-dark;
+    box-shadow: 0 5px 5px $shadow;
+  }
+
+  &-purple {
+    background-color: $accent-1;
+    color: $bg-2;
+  }
+}
+
+.hero {
+  margin-top: 8rem;
+  margin-bottom: 12rem;
+
+  &__title {
+    font-size: 5rem;
+    width: 14ch;
+    line-height: 1.15;
+  }
+
+  &__content {
+    font-size: 1.125rem;
+    width: 34ch;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+  }
+
+  &__img {
+    position: absolute;
+    transform: translateY(-65%) translateX(25%);
+  }
+}
+
+.blurb {
+  display: flex;
+  border-radius: 50px;
+  padding: 1.25rem;
+
+  &-pink {
+    background-color: rgba($accent-2, .15);
+  }
+  
+  &__text {
+    padding: 5rem 5rem 0 3.5rem;
+  }
+  
+  &__title {
+    font-size: 2.5rem;
+    line-height: 1.35;
+  }
+
+  &__content {
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
 }

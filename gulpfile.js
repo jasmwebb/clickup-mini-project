@@ -2,10 +2,12 @@ const { src, dest, watch, series } = require("gulp");
 const sass = require("gulp-sass");
 const browsersync = require("browser-sync");
 
+sass.compiler = require("sass");
+
 function scssTask() {
-  return src("src/scss/main.scss", { sourcemaps: true })
+  return src("./src/scss/**/*.scss", { sourcemaps: true })
     .pipe(sass())
-    .pipe(dest("public", { sourcemaps: "." }));
+    .pipe(dest("./public/css", { sourcemaps: "." }));
 }
 
 function browsersyncServe(cb) {
@@ -23,8 +25,8 @@ function browsersyncReload(cb) {
 }
 
 function watchTask() {
-  watch("*.html", browsersyncReload);
-  watch("src/scss/**/*.scss", series(scssTask, browsersyncReload));
+  watch("./*.html", browsersyncReload);
+  watch("./src/scss/**/*.scss", series(scssTask, browsersyncReload));
 }
 
 exports.default = series(

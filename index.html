@@ -5,9 +5,56 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DataWarehouse | About</title>
-  <link rel="stylesheet" href="public/main.css">
+  <link rel="stylesheet" href="./public/css/main.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hi :D</h1>
+  <div class="container">
+    <nav class="nav">
+      <div class="nav__left">
+        <svg class="nav__logo" width="49" height="35" viewBox="0 0 49 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="15" width="20" height="20" rx="10" fill="#9C69E2"/>
+          <rect x="29" width="20" height="35" rx="10" fill="#F063B8"/>
+        </svg>
+
+        <ul class="nav__links">
+          <li class="nav__item">About</li>
+          <li class="nav__item">Help</li>
+          <li class="nav__item">Features</li>
+          <li class="nav__item">Signup</li>
+        </ul>
+      </div>
+
+      <button class="btn btn-demo btn-arrowed nav__btn">
+        Request Demo
+        <svg class="btn__arrow" width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 15L21 8L15 1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 8H1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </nav>
+
+    <header class="hero">
+      <h1 class="hero__title">Save your data storage here.</h1>
+      <p class="hero__content">
+        Data Warehouse is a data storage area that has been tested for security, so you can store your data here safely but not be afraid of being stolen by others.
+      </p>
+      <button class="btn btn-purple">Learn more</button>
+
+      <img class="hero__img" src="assets/hero.svg" alt="People interacting with software interfaces">
+    </header>
+
+    <section class="blurb blurb-pink">
+      <img class="blurb__img" src="assets/blurb.svg" alt="Person surrounded by floating data">
+
+      <div class="blurb__text">
+        <h2 class="blurb__title">We are a high-level data storage bank</h2>
+        <p class="blurb__content">
+          The place to store various data that you can access at any time through the internet  and where you can carry it. This very flexible storage area has a high level of security. To enter into your own data you must enter the password that you created when you registered in this Data Warehouse. 
+        </p>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
