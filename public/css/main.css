@@ -104,13 +104,23 @@ h1, h2, h3 {
   }
 }
 .hero__title {
-  font-size: min(5rem, 12vw);
+  font-size: min(5rem, 8vw);
   width: 14ch;
   line-height: 1.15;
 }
 .hero__content {
   width: 35ch;
   margin-bottom: 3rem;
+}
+@media screen and (max-width: 1048px) {
+  .hero__content {
+    width: 28ch;
+  }
+}
+@media screen and (max-width: 900px) {
+  .hero__content {
+    width: 75vw;
+  }
 }
 .hero::before {
   content: "";
@@ -122,7 +132,7 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
 }
-@media screen and (max-width: 1048px) {
+@media screen and (max-width: 900px) {
   .hero::before {
     position: inherit;
     display: block;
