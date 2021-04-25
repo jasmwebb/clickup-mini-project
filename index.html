@@ -358,6 +358,7 @@
 
     // Calculate the carousel's position when the last card is in focus
     // We'll use this to determine when we reach the end of the testimonials
+    // Does not work for smaller screens
     const cardWidth = 668.8;
     const numCards = document.getElementsByClassName("card").length;
     const maxPosition = -(cardWidth * (numCards - 1));  // Subtract 1 to account for current card

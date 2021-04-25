@@ -16,7 +16,7 @@ h1, h2, h3 {
 }
 
 .container {
-  max-width: 1118px;
+  width: min(1118px, 90%);
   margin: auto;
 }
 
@@ -33,6 +33,12 @@ h1, h2, h3 {
   list-style: none;
   padding-left: 5rem;
 }
+@media screen and (max-width: 900px) {
+  .nav__links {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+}
 .nav__item {
   padding-left: 2.5rem;
 }
@@ -43,6 +49,11 @@ h1, h2, h3 {
 .nav__item-a:hover, .nav__item-a--current {
   color: #212353;
   font-weight: 800;
+}
+@media screen and (max-width: 900px) {
+  .nav .btn--demo {
+    display: none;
+  }
 }
 
 .btn {
@@ -87,8 +98,13 @@ h1, h2, h3 {
   margin-top: 8rem;
   margin-bottom: 12rem;
 }
+@media screen and (max-width: 900px) {
+  .hero {
+    margin-top: 2rem;
+  }
+}
 .hero__title {
-  font-size: 5rem;
+  font-size: min(5rem, 12vw);
   width: 14ch;
   line-height: 1.15;
 }
@@ -97,9 +113,24 @@ h1, h2, h3 {
   margin-bottom: 3rem;
 }
 .hero::before {
-  content: url("../../assets/hero.svg");
+  content: "";
+  background-image: url("../../assets/hero.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
-  transform: translate(43%, 20%);
+  transform: translate(34%, 23%);
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 1048px) {
+  .hero::before {
+    position: inherit;
+    display: block;
+    top: 0;
+    left: 0;
+    transform: none;
+    height: 25vh;
+  }
 }
 
 .blurb {
@@ -111,15 +142,29 @@ h1, h2, h3 {
 .blurb--pink {
   background-color: rgba(240, 99, 184, 0.15);
 }
+@media screen and (max-width: 900px) {
+  .blurb--pink {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .blurb--purple {
   background-color: #9C69E2;
   margin-top: 9rem;
 }
+.blurb__img {
+  width: min(33vw, 100%);
+}
 .blurb__text {
   padding: 5rem 5rem 0 3.5rem;
 }
+@media screen and (max-width: 900px) {
+  .blurb__text {
+    padding: 1rem 2rem;
+  }
+}
 .blurb__title {
-  font-size: 2.5rem;
+  font-size: min(2.5rem, 7vw);
   line-height: 1.35;
 }
 
@@ -139,6 +184,17 @@ h1, h2, h3 {
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem 8rem;
   justify-items: end;
+}
+@media screen and (max-width: 1048px) {
+  .features__list {
+    column-gap: 3rem;
+    justify-items: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .features__list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .feature {
@@ -252,12 +308,34 @@ h1, h2, h3 {
   top: 7rem;
   transform: translateX(-115%);
 }
+@media screen and (max-width: 1300px) {
+  .feature--green::after, .feature--purple::after, .feature--pink::after, .feature--blue::after {
+    content: "";
+  }
+}
+@media screen and (max-width: 1048px) {
+  .feature--green, .feature--purple, .feature--pink, .feature--blue {
+    padding-left: 5rem;
+  }
+  .feature--green::before, .feature--purple::before, .feature--pink::before, .feature--blue::before {
+    top: 0;
+    left: 0;
+    transform: none;
+    clip-path: none;
+    border-radius: 50px;
+  }
+}
 
 .testimonials {
   display: block;
   position: relative;
   padding: 6.25rem 5.5rem 3.75rem;
   overflow-x: hidden;
+}
+@media screen and (max-width: 900px) {
+  .testimonials {
+    padding: 2rem;
+  }
 }
 .testimonials__title {
   font-size: 2.5rem;
@@ -273,11 +351,17 @@ h1, h2, h3 {
   left: 0;
   background: linear-gradient(90deg, #9C69E2, transparent 8%, transparent 75%, #9C69E2);
 }
+@media screen and (max-width: 900px) {
+  .testimonials::after {
+    background: linear-gradient(90deg, #9C69E2, transparent 8%, transparent 92%, #9C69E2);
+  }
+}
 
 .carousel__cards {
   display: flex;
   flex-wrap: nowrap;
   gap: 1.25rem;
+  transition: transform 0.33s ease-in-out;
 }
 .carousel__controls {
   display: flex;
@@ -315,11 +399,23 @@ h1, h2, h3 {
   padding: 3.75rem 4.375rem 3.125rem;
   box-shadow: 0 1.15rem 0 0 rgba(0, 0, 0, 0.125);
 }
+@media screen and (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+}
 .card__img {
+  align-self: start;
   border-radius: 50%;
   height: 90px;
   width: 100%;
   object-fit: cover;
+}
+@media screen and (max-width: 900px) {
+  .card__img {
+    width: 90px;
+  }
 }
 .card__title {
   font-family: "Nunito", sans-serif;
@@ -335,6 +431,11 @@ h1, h2, h3 {
   font-weight: 400;
   width: 36ch;
 }
+@media screen and (max-width: 900px) {
+  .card__text {
+    width: 20ch;
+  }
+}
 
 .footer {
   border-top: 1px solid #9C69E2;
@@ -345,6 +446,11 @@ h1, h2, h3 {
   display: flex;
   justify-content: space-between;
   padding-bottom: 6rem;
+}
+@media screen and (max-width: 900px) {
+  .footer__cta, .footer__info {
+    flex-direction: column;
+  }
 }
 .footer__company {
   margin-right: 7rem;
@@ -364,10 +470,10 @@ h1, h2, h3 {
 .footer__address {
   font-style: normal;
   font-weight: 400;
+  margin-bottom: 1rem;
 }
 .footer__address--street {
   font-weight: 800;
-  margin-bottom: 1rem;
 }
 .footer__address a {
   text-decoration: none;
