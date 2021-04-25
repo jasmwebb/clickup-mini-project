@@ -2,6 +2,7 @@
 
 - Follows [this mockup](https://www.figma.com/file/qNLG2DvzowucTvhyYoM6KB/HTML-and-CSS-Engineer-Mini-Project?node-id=0%3A1)
 - Coded by [Jasmine Webb](https://www.jasminewebb.dev/)
+- [Deployed on Netlify](https://jwebb-clickup-mini.netlify.app/)
 - Pure HTML/CSS with BEM conventions
 - Gulp + Sass (SCSS) + BrowserSync for development
 
